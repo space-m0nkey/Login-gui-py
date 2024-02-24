@@ -1,8 +1,9 @@
 import customtkinter
-import tkinter.messagebox
 from keyauth import api
 import hashlib
 import sys
+
+
 
 def calcular_checksum():
     md5_hash = hashlib.md5()
@@ -23,6 +24,9 @@ customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
 janela= customtkinter.CTk()
 janela.geometry("500x300")
+janela.resizable(width=False, height=False)
+janela.iconbitmap("key.ico")
+janela.title("Login")
 txt= customtkinter.CTkLabel(janela,text="Fazer login")
 txt.pack(padx=10,pady=10)
 usuario= customtkinter.CTkEntry(janela,placeholder_text="Seu usuario")
