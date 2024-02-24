@@ -7,6 +7,9 @@ import platform  # check platform
 import subprocess  # needed for mac device
 import hmac # signature checksum
 import hashlib # signature checksum
+import tkinter as tk
+from tkinter import messagebox
+
 
 try:
     if os.name == 'nt':
@@ -178,8 +181,8 @@ class api:
             print(json["message"])
         else:
             print(json["message"])
-            time.sleep(3)
-            os._exit(1)
+            menesagemdeerro=(json["message"])
+            messagebox.showerror(f"Erro", menesagemdeerro)
 
     def license(self, key, hwid=None):
         self.checkinit()
